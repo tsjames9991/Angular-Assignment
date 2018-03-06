@@ -1,0 +1,22 @@
+<form #loginForm="ngForm" (submit)="goTo('home')" class="w3-container w3-form">
+  <input #email="ngModel" name="email" type="Email"
+         placeholder="Enter your email..."
+         [(ngModel)]="user.email"
+         required
+         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+         class ="w3-input"
+  />
+  <div [hidden]="email.valid || email.pristine" class="alert">
+    Your Email is invalid!
+  </div>
+  <br>
+  <input #name="ngModel" name="Pass" type="password"
+         placeholder="Enter Password... " [(ngModel)]="user.password"
+         required
+         class="w3-input"
+  />
+  <br>
+  <button [disabled]="loginForm.invalid" type="submit"
+          class = "w3-button w3-blue"
+  >Log In</button>
+</form>
