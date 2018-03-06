@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="let post of posts['items']">
+    <a routerLink="/youtube/{{post['id'].videoId}}">
+      <span> {{post['snippet'].title| uppercase}}</span></a>
+    <br>
+    <span>{{post['snippet'].description}}</span><br>
+    <img src="{{post['snippet'].thumbnails['default'].url}}">
+  </li>
+</ul>
+
